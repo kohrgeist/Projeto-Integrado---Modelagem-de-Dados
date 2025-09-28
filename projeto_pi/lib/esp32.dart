@@ -46,6 +46,5 @@ class Esp32 {
     
     gerenciador.adicionarLeitura(novoRegistro);
     print('Dados enviados com sucesso pelo ESP32 $_nome.');
-    //aa
   }
 }
