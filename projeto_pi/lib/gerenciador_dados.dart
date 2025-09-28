@@ -1,4 +1,4 @@
-import '../models/registro_leitura.dart';
+import 'registro_leitura.dart';
 
 // Gerenciando a lógica de negocio relacionada ao historico de leituras
 // Separa a logica da manipulacao de dados dos modelos de dados
@@ -32,8 +32,9 @@ class GerenciadorDados {
     double somaPotenciaWatts = 0.0;
 
     // Filtra os registros que estão dentro do intervalo de datas
-    final registrosNoPeriodo = _historico.where((r) =>
-        r.dataHora.isAfter(dataInicial) && r.dataHora.isBefore(dataFinal));
+    final registrosNoPeriodo = _historico.where(
+      (r) => r.dataHora.isAfter(dataInicial) && r.dataHora.isBefore(dataFinal),
+    );
 
     for (var registro in registrosNoPeriodo) {
       somaPotenciaWatts += registro.valorPotencia;
