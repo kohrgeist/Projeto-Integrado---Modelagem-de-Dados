@@ -1,29 +1,21 @@
-// Classe que guarda os dados de uma medição (tipo um registro de leitura).
+// Classe que guarda os dados de uma medição (um registro de leitura).
 class RegistroLeitura {
-// atributos privados pra segurar as infos
-final int _idLeitura;
-final double _valorCorrente;
-final double _valorPotencia;
-final DateTime _dataHora;
+// atributos públicos (sem underline agora)
+final int idLeitura;
+final double valorCorrente;
+final double valorPotencia;
+final DateTime dataHora;
 
 // construtor: já cria o id baseado no tempo e pega a data/hora atual
 RegistroLeitura({
-required double valorCorrente,
-required double valorPotencia,
-}) : _idLeitura = DateTime.now().millisecondsSinceEpoch, // id único "fake" só pelo tempo
-_valorCorrente = valorCorrente,
-_valorPotencia = valorPotencia,
-_dataHora = DateTime.now();
-
-// getters pra acessar os dados (já que os atributos tão privados)
-int get idLeitura => _idLeitura;
-double get valorCorrente => _valorCorrente;
-double get valorPotencia => _valorPotencia;
-DateTime get dataHora => _dataHora;
+required this.valorCorrente,
+required this.valorPotencia,
+})  : idLeitura = DateTime.now().millisecondsSinceEpoch, // id único baseado no tempo
+dataHora = DateTime.now();
 
 // toString pra imprimir o registro de forma bonitinha
 @override
 String toString() {
-return 'Registro(ID: $_idLeitura, Corrente: ${_valorCorrente.toStringAsFixed(2)}A, Potência: ${_valorPotencia.toStringAsFixed(2)}W, Data: $_dataHora)';
+return 'Registro(ID: $idLeitura, Corrente: ${valorCorrente.toStringAsFixed(2)}A, Potência: ${valorPotencia.toStringAsFixed(2)}W, Data: $dataHora)';
 }
 }
