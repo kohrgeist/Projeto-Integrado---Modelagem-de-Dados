@@ -6,7 +6,7 @@ abstract class Sensor {
   bool _ativo;
 
   // Método construtor
-  Sensor(this._idSensor, this._nome, this._tivo);
+  Sensor(this._idSensor, this._nome, this._ativo);
 
   // Requisições públicas para acesso controlado aos atributos privados
   int get idSensor => _idSensor;
