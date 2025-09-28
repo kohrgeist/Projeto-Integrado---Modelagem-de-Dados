@@ -1,5 +1,5 @@
-import 'models/esp32.dart';
-import 'services/gerenciador_dados.dart';
+import '../lib/esp32.dart';
+import '../lib/gerenciador_dados.dart';
 
 // Função principal para executar a simulação
 void main() async {
@@ -25,10 +25,15 @@ void main() async {
   final inicioPeriodo = agora.subtract(const Duration(minutes: 1));
   final fimPeriodo = agora.add(const Duration(minutes: 1));
 
-  final consumoTotalKWh = gerenciador.calcularConsumoTotal(inicioPeriodo, fimPeriodo);
+  final consumoTotalKWh = gerenciador.calcularConsumoTotal(
+    inicioPeriodo,
+    fimPeriodo,
+  );
 
   print('--- CÁLCULO DE CONSUMO ---');
-  print('Período de análise: ${inicioPeriodo.toIso8601String()} a ${fimPeriodo.toIso8601String()}');
+  print(
+    'Período de análise: ${inicioPeriodo.toIso8601String()} a ${fimPeriodo.toIso8601String()}',
+  );
   print('Consumo total no período: ${consumoTotalKWh.toStringAsFixed(4)} kWh');
   print('--------------------------');
 }
