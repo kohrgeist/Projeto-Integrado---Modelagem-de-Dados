@@ -17,7 +17,7 @@ void main() async {
 
   meuEsp32.iniciarLeitura(gerenciador, tensao: tensaoRede);
 
-  // Exibição do histórico de dados coletados
+  // Exibição do histórico dos dados coletados
   gerenciador.exibirHistorico();
 
   // Calcular o consumo de energia em um período
@@ -37,3 +37,4 @@ void main() async {
   print('Consumo total no período: ${consumoTotalKWh.toStringAsFixed(4)} kWh');
   print('--------------------------');
 }
+
