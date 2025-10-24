@@ -8,7 +8,11 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
+  firedart: ^0.9.8
+  mysql1: ^0.20.0
   path: ^1.9.0
+  shelf: ^1.4.2
+  shelf_router: ^1.1.4
 
 dev_dependencies:
   lints: ^6.0.0
