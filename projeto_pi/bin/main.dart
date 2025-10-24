@@ -13,7 +13,7 @@ final dbSettings = ConnectionSettings(
   password: '1234',
   db: 'mydb',
 );
-//codigo genérico do MySQL, esperar o Isaque, não consigo utilizar o MySQL nesse pc ainda.
+//codigo genérico do MySQL, esperar o Isaque, não consigo utilizar o MySQL nesse pc ainda..
 
 void main() async {
   // 1. Inicializa a conexão com o Firebase
@@ -73,4 +73,5 @@ void main() async {
     'o servidor Dart está rodando no link: http://${server.address.host}:${server.port}',
   );
 }
+
 
