@@ -1,0 +1,72 @@
+CREATE SCHEMA IF NOT EXISTS sctPI DEFAULT CHARACTER SET utf8 ;
+USE sctPI ;
+
+-- -----------------------------------------------------
+-- Table sctPI.operador
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS sctPI.operador (
+  idoperador INT NOT NULL AUTO_INCREMENT,
+  nome VARCHAR(45) NULL,
+  idade VARCHAR(45) NULL,
+  matriculaEmpresarial VARCHAR(45) NULL,
+  PRIMARY KEY (idoperador))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table sctPI.leituras
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS sctPI.leituras (
+  idleituras INT NOT NULL AUTO_INCREMENT,
+  valorWatHora DOUBLE NULL,
+  unidade INT NULL,
+  valorTensao DOUBLE NULL,
+  data DATETIME NULL,
+  valorPotencia DOUBLE NULL,
+  valorIrms DOUBLE NULL,
+  PRIMARY KEY (idleituras))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table sctPI.maquina
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS sctPI.maquina (
+  idmaquina INT NOT NULL AUTO_INCREMENT,
+  modelo VARCHAR(45) NULL,
+  voltagem INT NULL,
+  nome VARCHAR(45) NULL,
+  operador_idoperador INT NOT NULL,
+  leituras_idleituras INT NOT NULL,
+  PRIMARY KEY (idmaquina),
+  INDEX fk_maquina_operador_idx (operador_idoperador ASC) VISIBLE,
+  INDEX fk_maquina_leituras1_idx (leituras_idleituras ASC) VISIBLE,
+  CONSTRAINT fk_maquina_operador
+    FOREIGN KEY (operador_idoperador)
+    REFERENCES sctPI.operador (idoperador)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT fk_maquina_leituras1
+    FOREIGN KEY (leituras_idleituras)
+    REFERENCES sctPI.leituras (idleituras)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table sctPI.sensores
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS sctPI.sensores (
+  idsensores INT NOT NULL AUTO_INCREMENT,
+  nome VARCHAR(45) NULL,
+  modelo VARCHAR(45) NULL,
+  maquina_idmaquina INT NOT NULL,
+  PRIMARY KEY (idsensores),
+  INDEX fk_sensores_maquina1_idx (maquina_idmaquina ASC) VISIBLE,
+  CONSTRAINT fk_sensores_maquina1
+    FOREIGN KEY (maquina_idmaquina)
+    REFERENCES sctPI.maquina (idmaquina)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
