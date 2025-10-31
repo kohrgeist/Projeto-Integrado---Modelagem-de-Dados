@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "prj-sensorenergia",
+  "private_key_id": "5769a640c2903932796182a2764b40cb0f3c7d57",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC1x6DqPPvs695x\n34YclBDJgsPAw7Ypd8nm3Wagz40/V8qgWLLM61LnddfMeIgjdFnUTIGPXqBAxJGW\nji/m5PKUMM7Z5j8x2OHEKZNo7vg30iJXhzxzQ4E8fqfy1s0tkogkFSC/nYei8Qlt\nM7vO4c7I524JKdQvkbDAcqOjMmV6alvPzljgeEyIBIrDwqxrJ15oGoIaImOqhKJG\ncgv3BHKkK6dbeb+WFs/eCxcMEPofjTc+ms+xFJdleGxR1+HCbzOh5eiY+l6PDHMv\n0BS0Ws5YyCZ+Dt9KuwcN6mTVRiZe/5sI+89cx7Kb08+WRfZ7LFyl5IO5h6o4nYoj\nU9qePesnAgMBAAECggEADg742nTJ9QpO41aqrBYlcDg9RHC+a1mY01KHJ+O1ZFM5\nWApUFbYTbNQ30tf1i2xpsBoUoQ5r7WZmbhLkEILfYeeeb8q3U3cXCtE+Vcy5hLOr\nNUK/wZhUa+XNvmGvb5lYDxZVOIyJ22ex13C7UyYylGYVo/7Iqr8lQNT849e3cm6a\nqK5DHlzvnxbCcotoOICmoyRg45B/0/ssMpc6WotHZpvktwkZrqGYo43ZOCcv/L6S\nG0y+xwS1W+w6gBfIxDZY1caSyi+y+5hfpTWm4EHkz3Rlpa4IpMZkK0ORA6CNH6rN\nLVy2qOv40mpPyxW+wJHyJx3IwEKaoXaumCpHAlMSUQKBgQD3omJxG152nswXbDdX\nC2W553XtRoEijvfdomdOpOYEoc8G+PnpOSD7i5tMNRVuZwK2GOeizkfRka2/Q/G6\niPS8OOXVRYI6vKUVT0ZJR3um0orN54tNW3FYpJOu0UtON0MvlRaiRnm3x30NIUQu\nshEcpQP01WcK5W5nQYUvBd9ecQKBgQC767brgE5j1lycyzCVGDFo6dmwYbbz9SNz\nKHPZfZMHwuirP2FeuR+V/M0KqBcxHOXHsDNPcgQiwWcAlA8sQBBfNeqBWD4sZLUj\nDmjo2c3NLFMpDlXLHpY6o6NrLZhdw2FckeCUKs3hDQCOnaOD7/ZeLcgx2mL+1Qy8\nwzS2hmjfFwKBgQDFeWMTW4X7BisuyodfDKG0nFW4P68fBe+3eJj1aB5dt0NHBikU\nyQ/6SJwxK2vJvK+20yl09Rbkkk2B5wbPgAPaTW1Ko8F0YZcr5SnhqfV7VQ6HoIu/\nxpoe3C9BC3oIB522RifkhFrwKU8Zt1uN+UYYF6eOCNfBIrDl+qPgmchEoQKBgFWj\nQ8bqv86Ln8TsbAVl8w5mk4fn3+IpMrCGHNVefqSo1DNGPO9X2ecWP7K9i2QcUTLB\nP4DS6sOT84a18nwt7cgV3/p15k+AzXNeW7zRlRINQxCQsdRQ6hFrBUwQiUEhirsO\n15NuNkh7DmfvutajgljE8FiXt0l+ecGEC/+qHRydAoGBAIW5zwDcHFVOQ0zzREtJ\nAoxCuNMKG6bkw409nzNXFzu++0YdALbDGAaJ5RdnEFm9u+Foz6JnT2nJwqbDrI10\ngrRh804pHHhlETkkWJKnhfG1HO7CfMNqJUSmEDs2mjrQwulRhpTnp/9mEQbovLOO\n2zFj4vrs+6mDhe7ezgBbXIqm\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-fbsvc@prj-sensorenergia.iam.gserviceaccount.com",
+  "client_id": "103735704624133820443",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40prj-sensorenergia.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
