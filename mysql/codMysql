@@ -1,72 +1,60 @@
-CREATE SCHEMA IF NOT EXISTS sctPI DEFAULT CHARACTER SET utf8 ;
-USE sctPI ;
+CREATE DATABASE operadores_sensores;
 
--- -----------------------------------------------------
--- Table sctPI.operador
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS sctPI.operador (
-  idoperador INT NOT NULL AUTO_INCREMENT,
-  nome VARCHAR(45) NULL,
-  idade VARCHAR(45) NULL,
-  matriculaEmpresarial VARCHAR(45) NULL,
-  PRIMARY KEY (idoperador))
-ENGINE = InnoDB;
+USE operadores_sensores;
 
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100),
+    funcao VARCHAR(50)
+);
 
--- -----------------------------------------------------
--- Table sctPI.leituras
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS sctPI.leituras (
-  idleituras INT NOT NULL AUTO_INCREMENT,
-  valorWatHora DOUBLE NULL,
-  unidade INT NULL,
-  valorTensao DOUBLE NULL,
-  data DATETIME NULL,
-  valorPotencia DOUBLE NULL,
-  valorIrms DOUBLE NULL,
-  PRIMARY KEY (idleituras))
-ENGINE = InnoDB;
+CREATE TABLE maquinas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100),
+    descricao VARCHAR(255)
+);
 
+CREATE TABLE sensores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100),
+    descricao VARCHAR(255)
+);
 
--- -----------------------------------------------------
--- Table sctPI.maquina
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS sctPI.maquina (
-  idmaquina INT NOT NULL AUTO_INCREMENT,
-  modelo VARCHAR(45) NULL,
-  voltagem INT NULL,
-  nome VARCHAR(45) NULL,
-  operador_idoperador INT NOT NULL,
-  leituras_idleituras INT NOT NULL,
-  PRIMARY KEY (idmaquina),
-  INDEX fk_maquina_operador_idx (operador_idoperador ASC) VISIBLE,
-  INDEX fk_maquina_leituras1_idx (leituras_idleituras ASC) VISIBLE,
-  CONSTRAINT fk_maquina_operador
-    FOREIGN KEY (operador_idoperador)
-    REFERENCES sctPI.operador (idoperador)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT fk_maquina_leituras1
-    FOREIGN KEY (leituras_idleituras)
-    REFERENCES sctPI.leituras (idleituras)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+INSERT INTO usuarios (nome, funcao) VALUES
+('Lucas Andrade', 'Operador'),
+('Mariana Souza', 'Operador'),
+('Rafael Costa', 'Operador'),
+('Beatriz Lima', 'Operador'),
+('João Pereira', 'Operador'),
+('Camila Alves', 'Operador'),
+('Pedro Martins', 'Operador'),
+('Fernanda Gomes', 'Operador'),
+('Gustavo Rocha', 'Operador'),
+('Isabela Duarte', 'Operador');
 
+INSERT INTO maquinas (nome, descricao) VALUES
+('Máquina 1', 'Prensa hidráulica'),
+('Máquina 2', 'Cortadora de metal'),
+('Máquina 3', 'Injetora de plástico'),
+('Máquina 4', 'Esteira transportadora'),
+('Máquina 5', 'Furadeira automática'),
+('Máquina 6', 'Torno CNC'),
+('Máquina 7', 'Compressor de ar'),
+('Máquina 8', 'Misturador industrial'),
+('Máquina 9', 'Empacotadora'),
+('Máquina 10', 'Serra circular');
 
--- -----------------------------------------------------
--- Table sctPI.sensores
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS sctPI.sensores (
-  idsensores INT NOT NULL AUTO_INCREMENT,
-  nome VARCHAR(45) NULL,
-  modelo VARCHAR(45) NULL,
-  maquina_idmaquina INT NOT NULL,
-  PRIMARY KEY (idsensores),
-  INDEX fk_sensores_maquina1_idx (maquina_idmaquina ASC) VISIBLE,
-  CONSTRAINT fk_sensores_maquina1
-    FOREIGN KEY (maquina_idmaquina)
-    REFERENCES sctPI.maquina (idmaquina)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+INSERT INTO sensores (codigo, tipo, maquina_id) VALUES
+('SEN-001', 'Temperatura', 1),
+('SEN-002', 'Umidade', 2),
+('SEN-003', 'Pressão', 3),
+('SEN-004', 'Vibração', 4),
+('SEN-005', 'Corrente elétrica', 5),
+('SEN-006', 'Tensão elétrica', 6),
+('SEN-007', 'Ruído', 7),
+('SEN-008', 'Velocidade', 8),
+('SEN-009', 'Fluxo de ar', 9),
+('SEN-010', 'Temperatura', 10);
+
+SELECT * FROM usuarios;
+SELECT * FROM maquinas;
