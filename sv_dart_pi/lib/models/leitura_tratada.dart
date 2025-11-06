@@ -21,9 +21,9 @@ class LeituraTratada {
     print('[LeituraTratada] Mapeando dados do Firebase: $data');
 
     try {
-      final double corrente = (data['corrente'] as num? ?? 0).toDouble();
-      final double potencia = (data['potencia_W'] as num? ?? 0).toDouble();
-      final double tensao = (data['tensao_V'] as num? ?? 0).toDouble();
+      final double corrente = ((data['corrente'] as num? ?? 0).toDouble() * 100).truncate() / 100;
+      final double potencia = ((data['potencia_W'] as num? ?? 0).toDouble() * 100).truncate() / 100;
+      final double tensao   = ((data['tensao_V'] as num? ?? 0).toDouble() * 100).truncate() / 100;
       final DateTime dataLeitura = data.containsKey('ultima_leitura')
           ? DateTime.parse(data['ultima_leitura'] as String)
           : DateTime.now();
@@ -67,3 +67,4 @@ class LeituraTratada {
     return 'LeituraTratada(ID Sensor: $sensoresIdsensores, Potencia: $valorPotencia W)';
   }
 }
+
