@@ -1,3 +1,6 @@
+USE dbpi2025;
+
+-- Inserção dos Operadores
 INSERT INTO dbpi2025.operador (nome, idade, matriculaEmpresarial) VALUES
 ('Lucas Andrade', '28', 'OP1001'),
 ('Mariana Souza', '35', 'OP1002'),
@@ -40,6 +43,7 @@ INSERT INTO dbpi2025.operador (nome, idade, matriculaEmpresarial) VALUES
 ('Raul Gomes', '44', 'OP1044'),
 ('Tânia Rocha', '26', 'OP1045');
 
+-- Inserção das Máquinas
 INSERT INTO dbpi2025.maquina (modelo, voltagem, nome, operador_idoperador) VALUES
 ('Prensa Hidráulica X1', 380, 'Máquina 1', 1),
 ('Cortadora Laser V2', 220, 'Máquina 2', 2),
@@ -82,12 +86,11 @@ INSERT INTO dbpi2025.maquina (modelo, voltagem, nome, operador_idoperador) VALUE
 ('Injetora de Borracha I2', 440, 'Máquina 38', 38),
 ('Esteira de Montagem EM1', 380, 'Máquina 39', 39),
 ('Furadeira Múltipla FM1', 220, 'Máquina 40', 40),
-('Torno CNC Max', 220, 'Máquina 41', 41),
-('Compressor Frio CF1', 380, 'Máquina 42', 42),
-('Misturador Industrial MI2', 440, 'Máquina 43', 43),
-('Empacotadora Automática E3', 380, 'Máquina 44', 44),
-('Serra Vertical SV1', 220, 'Máquina 45', 45),
--- Máquinas 46 a 100 (Ciclo Operadores 1 a 45 - Reciclagem)
+('Torno CNC Max', 220, 'Máquina 41', 1), 
+('Compressor Frio CF1', 380, 'Máquina 42', 2),
+('Misturador Industrial MI2', 440, 'Máquina 43', 3), 
+('Empacotadora Automática E3', 380, 'Máquina 44', 4), 
+('Serra Vertical SV1', 220, 'Máquina 45', 5), 
 ('Prensa de Estampar PE4', 380, 'Máquina 46', 1),
 ('Robô Soldador RS1', 220, 'Máquina 47', 2),
 ('Máquina de Envasar VQ', 440, 'Máquina 48', 3),
@@ -128,11 +131,11 @@ INSERT INTO dbpi2025.maquina (modelo, voltagem, nome, operador_idoperador) VALUE
 ('Injetora de Silicone IS1', 440, 'Máquina 83', 38),
 ('Esteira de Resfriamento ER2', 380, 'Máquina 84', 39),
 ('Furadeira Radial FR1', 220, 'Máquina 85', 40),
-('Torno Automático TA1', 220, 'Máquina 86', 41),
-('Compressor Silencioso CS2', 380, 'Máquina 87', 42),
-('Misturador de Pó MP2', 440, 'Máquina 88', 43),
-('Empacotadora Flowpack EF3', 380, 'Máquina 89', 44),
-('Serra de Esquadria SE1', 220, 'Máquina 90', 45),
+('Torno Automático TA1', 220, 'Máquina 86', 1), 
+('Compressor Silencioso CS2', 380, 'Máquina 87', 2), 
+('Misturador de Pó MP2', 440, 'Máquina 88', 3), 
+('Empacotadora Flowpack EF3', 380, 'Máquina 89', 4), 
+('Serra de Esquadria SE1', 220, 'Máquina 90', 5),
 ('Prensa de Forjamento PF1', 380, 'Máquina 91', 1),
 ('Robô de Pintura RP1', 220, 'Máquina 92', 2),
 ('Máquina de Teste de Dureza TD1', 440, 'Máquina 93', 3),
@@ -144,10 +147,11 @@ INSERT INTO dbpi2025.maquina (modelo, voltagem, nome, operador_idoperador) VALUE
 ('Caldeira Elétrica CE1', 380, 'Máquina 99', 9),
 ('Gerador a Diesel GD2', 220, 'Máquina 100', 10);
 
-INSERT INTO dbpi2025.sensores (nome, descricao, maquina_idmaquina) VALUES
-('SCT-01', 'Sensor de Corrente Elétrica', 1),
-('S-Vibra-02', 'Sensor de Vibração no Eixo', 2),  
-('S-Press-03', 'Sensor de Pressão no Molde', 3), 
-('S-Corrente-04', 'Sensor de Corrente Elétrica', 4), 
-('S-Tensao-05', 'Sensor de Tensão de Alimentação', 5),
-('S-Temp-06', 'Sensor de Temperatura do Óleo', 6);
+-- Inserção dos sensores
+INSERT INTO dbpi2025.sensores (nome, descricao, estado, maquina_idmaquina) VALUES
+('SCT-01', 'Sensor de Corrente Elétrica', true , 1),
+('S-Vibra-02', 'Sensor de Vibração no Eixo', false , 2),
+('S-Press-03', 'Sensor de Pressão no Molde', false ,3),
+('S-Corrente-04', 'Sensor de Corrente Elétrica', true ,4),
+('S-Tensao-05', 'Sensor de Tensão de Alimentação', false ,5),
+('S-Temp-06', 'Sensor de Temperatura do Óleo', false ,6);
