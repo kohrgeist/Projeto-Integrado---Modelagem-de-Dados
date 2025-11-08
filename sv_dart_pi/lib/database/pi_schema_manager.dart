@@ -43,7 +43,7 @@ class MeuSchemaManager implements SchemaManager {
       CREATE TABLE IF NOT EXISTS dbpi2025.sensores (
         idsensores INT NOT NULL AUTO_INCREMENT,
         nome VARCHAR(45) NULL,
-        modelo VARCHAR(45) NULL,
+        descricao VARCHAR(45) NULL,
         maquina_idmaquina INT NOT NULL,
         PRIMARY KEY (idsensores),
         INDEX fk_sensores_maquina1_idx (maquina_idmaquina ASC) VISIBLE,
@@ -76,3 +76,4 @@ class MeuSchemaManager implements SchemaManager {
     print('[SchemaManager] Tabelas OK.');
   }
 }
+
