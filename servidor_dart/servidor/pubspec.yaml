@@ -1,0 +1,11 @@
+name: sv_dart_pi
+description: Sistema de Monitoramento de Energia
+version: 1.0.0
+# repository: https://github.com/kohrgeist/Projeto-Integrado---Modelagem-de-Dados
+
+environment:
+  sdk: ^3.9.4
+
+dependencies:
+  http: ^1.1.0
+  mysql_client: ^0.0.27
