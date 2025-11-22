@@ -1,15 +1,15 @@
-#Projeto-Integrado-Modelagem-de-Dados
+# Projeto-Integrado-Modelagem-de-Dados
 
 #Esse projeto visa a construção de um sistema de monitoramento de energia utilizando um sensor de corrente alternada
 
 #Este sistema coleta dados de um sensor de corrente elétrica (SCT-013) conectado a um ESP32, armazena no Firebase Realtime Database, processa via Dart e insere no MySQL para análise no Power BI
 
-#A arquitetura do projeto é a seguinte:
+# Arquitetura do projeto:
 
 #ESP32 + SCT-013  →  Firebase  →  Dart App  →  MySQL  →  Power BI
 #(Coleta)         (Realtime)   (Processa)  (Armazena) (Visualiza)
 
-#Tecnologias Utilizadas: 
+# Tecnologias Utilizadas: 
 
 #Linguagem: Dart 3.9.4 (dependencies de http1.1.0 e mysql_client0.0.27
 
@@ -21,7 +21,7 @@
 
 #Visualização: Power BI dashboard + medidas DAX
 
-#EXECUTANDO..
+# EXECUTANDO..
 
 #Pré-requisitos:
 
@@ -33,7 +33,7 @@
 
 #ESP32 com sensor SCT-013 (opcional, pode-se usar dados ficticios)
 
-#Principais problemas ao executar e possíveis soluções:
+# Principais problemas ao executar e possíveis soluções:
 
 #❌ Erro: "Can't connect to MySQL server"
 #Verifique se o MySQL está rodando
