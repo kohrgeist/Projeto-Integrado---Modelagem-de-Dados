@@ -48,3 +48,4 @@
 #Verifique a URL do Firebase
 
 #Projeto desenvolvido para fins acadêmicos.
+#Feito por Marcos, Giovanna, Isaque, Guilherme, Rafael e João.
